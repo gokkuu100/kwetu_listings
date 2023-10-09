@@ -15,7 +15,7 @@ function DeleteHouse() {
       return;
     }
 
-    fetch(`http://127.0.0.1:5000/houses/${houseId}`, {
+    fetch(`https://housing-db-85734cb1418b.herokuapp.com/houses/${houseId}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${token}`

@@ -9,7 +9,7 @@ function UserDashboard() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://127.0.0.1:5000/users/${id}`)
+      fetch(`https://housing-db-85734cb1418b.herokuapp.com/users/${id}`)
         .then((response) => response.json())
         .then((data) => {
           setUser(data);

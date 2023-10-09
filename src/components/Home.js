@@ -6,7 +6,7 @@ function Home() {
 
   useEffect(() => {
     // Fetch houses data from API endpoint
-    fetch("http://127.0.0.1:5000/houses") // Update the API endpoint URL
+    fetch("https://housing-db-85734cb1418b.herokuapp.com/houses") // Update the API endpoint URL
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data)) {

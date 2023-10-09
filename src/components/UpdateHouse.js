@@ -17,7 +17,7 @@ function UpdateHouse() {
     // Get the token from localStorage
     const token = localStorage.getItem("access_token");
 
-    fetch(`http://127.0.0.1:5000/houses/${houseId}`, {
+    fetch(`https://housing-db-85734cb1418b.herokuapp.com/houses/${houseId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

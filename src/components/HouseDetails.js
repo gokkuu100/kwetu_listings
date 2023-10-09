@@ -8,12 +8,12 @@ function HouseDetails() {
 
   useEffect(() => {
     // Fetch house details based on ID from the API endpoint
-    fetch(`http://127.0.0.1:5000/houses/${id}`)
+    fetch(`https://housing-db-85734cb1418b.herokuapp.com/houses/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setHouse(data);
         // Fetch agent details based on agent_id from the house data
-        fetch(`http://127.0.0.1:5000/agents/${data.agent_id}`)
+        fetch(`https://housing-db-85734cb1418b.herokuapp.com/agents/${data.agent_id}`)
           .then((response) => response.json())
           .then((agentData) => {
             setAgent(agentData);
