@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./components/Home";
+import HouseDetails from "./components/HouseDetails";
+import CreateHouse from "./components/CreateHouse";
+import UpdateHouse from "./components/UpdateHouse";
+import DeleteHouse from "./components/DeleteHouse";
+import UserDashboard from "./components/UserDashboard";
+import AgentDashboard from "./components/AgentDashboard";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<SignIn />} />
+      <Route path="/createhouse" element={<CreateHouse />} />
+      <Route path="/updatehouse" element={<UpdateHouse />} />
+      <Route path="/deletehouse" element={<DeleteHouse />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/house/:id" element={<HouseDetails />} />
+      <Route path="/users/:id" element={<UserDashboard />} />
+      <Route path="/agents/:id" element={<AgentDashboard />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/logout" element={<Navigate to="/signin" />} />
+    </Routes>
   );
 }
 
